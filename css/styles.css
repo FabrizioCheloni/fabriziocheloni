@@ -1,0 +1,180 @@
+.afacad-flux-1 {
+  font-family: "Afacad Flux", serif;
+  font-optical-sizing: auto;
+  font-weight: 120;
+  font-style: normal;
+  font-variation-settings:
+    "slnt" 0;
+}
+
+.cyan-link {
+  color: cyan;
+  margin: 0;
+  font-size: 1.2em;
+  font-weight: normal;
+}
+
+.profile-photo {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.profile-photo img {
+  width: 200px; /* Adjust size as needed */
+  height: auto;
+  border-radius: 50%; /* Optional: makes the image circular */
+  border: 2px solid #ccc;
+}
+
+body {
+  font-family: "Afacad Flux", serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+header {
+  background: #1b1f1f;
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.0em;
+}
+
+header h2 {
+  margin: 0;
+  font-size: 1.2em;
+  font-weight: normal;
+  color: #b7b7b7;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin: 0 15px;
+}
+
+a {
+  color: #fefefe; /* Set your desired link color here */
+  text-decoration: none;
+}
+
+a:hover {
+  color: #00fff7; /* Optional: change link color on hover */
+}
+
+/* Link colors in the body (main section) */
+main a {
+  color: #f1ad03; /* Links in the body (main) section have a different color */
+  text-decoration: underline;
+}
+
+main a:hover {
+  color: #ff5500; /* Hover effect for links in the body (main) section */
+}
+
+main {
+  padding: 0px 500px;
+  font-size: 1.5em;
+}
+
+footer {
+  background: #1b1f1f;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+.header-info {
+  text-align: left; /* Name and job title aligned to the left */
+}
+
+.cta-button {
+  display: none; /* "Let's Talk" button removed */
+}
+
+/* Responsive styles */
+@media (max-width: 1600px) {
+  header {
+    padding: 10px 10px; /* Less padding on smaller screens */
+  }
+
+  header h1 {
+    font-size: 1.5em; /* Smaller font size for h1 */
+  }
+
+  header h2 {
+    font-size: 1em; /* Smaller font size for h2 */
+  }
+
+  nav ul li {
+    margin: 0 5px; /* Less margin on smaller screens */
+  }
+
+  main {
+    padding: 0px 300px; /* Less padding for main on small screens */
+    font-size: 1.5em; /* Smaller font size for readability */
+  }
+}
+
+/* Responsive styles */
+@media (max-width: 1300px) {
+  header {
+    padding: 10px 10px; /* Less padding on smaller screens */
+  }
+
+  header h1 {
+    font-size: 1.5em; /* Smaller font size for h1 */
+  }
+
+  header h2 {
+    font-size: 1em; /* Smaller font size for h2 */
+  }
+
+  nav ul li {
+    margin: 0 5px; /* Less margin on smaller screens */
+  }
+
+  main {
+    padding: 0px 100px; /* Less padding for main on small screens */
+    font-size: 1.5em; /* Smaller font size for readability */
+  }
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  header {
+    padding: 10px 10px; /* Less padding on smaller screens */
+  }
+
+  header h1 {
+    font-size: 1.5em; /* Smaller font size for h1 */
+  }
+
+  header h2 {
+    font-size: 1em; /* Smaller font size for h2 */
+  }
+
+  nav ul li {
+    margin: 0 5px; /* Less margin on smaller screens */
+  }
+
+  main {
+    padding: 0px 20px; /* Less padding for main on small screens */
+    font-size: 1.5em; /* Smaller font size for readability */
+  }
+}
