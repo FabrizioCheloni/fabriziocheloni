@@ -54,17 +54,6 @@ header h2 {
   color: #b7b7b7;
 }
 
-nav ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-nav ul li {
-  display: inline;
-  margin: 0 15px;
-}
-
 a {
   color: #fefefe; /* Set your desired link color here */
   text-decoration: none;
@@ -87,6 +76,17 @@ main a:hover {
 main {
   padding: 0px 500px;
   font-size: 1.5em;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin: 0 15px;
 }
 
 footer {
@@ -121,8 +121,15 @@ footer {
     font-size: 1em; /* Smaller font size for h2 */
   }
 
+  nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
   nav ul li {
-    margin: 0 5px; /* Less margin on smaller screens */
+    display: inline;
+    margin: 0 15px;
   }
 
   main {
@@ -145,8 +152,15 @@ footer {
     font-size: 1em; /* Smaller font size for h2 */
   }
 
+  nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
   nav ul li {
-    margin: 0 5px; /* Less margin on smaller screens */
+    display: inline;
+    margin: 0 15px;
   }
 
   main {
@@ -169,8 +183,13 @@ footer {
     font-size: 1em; /* Smaller font size for h2 */
   }
 
+  nav ul {
+    flex-direction: column; /* Change to vertical layout */
+  }
+
   nav ul li {
-    margin: 0 5px; /* Less margin on smaller screens */
+    display: flex;
+    margin: 0 0px;
   }
 
   main {
