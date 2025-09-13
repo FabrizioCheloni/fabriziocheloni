@@ -1,0 +1,1 @@
+Add the article #$ARGUMENTS to the wiki page. The article should follow the same exact pattern used in the wiki, so there must be a clickable Title that opens the article's link, a brief introduction and some tags. The article should be added to a coherent section, and if no section matches the content of the article, create a new one. 
