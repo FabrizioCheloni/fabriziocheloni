@@ -25,6 +25,83 @@
     <meta property="twitter:image" content="https://www.fabriziocheloni.com/images/myphoto.jpg">
     
     <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .latest-banner {
+            background: linear-gradient(135deg, #ff6600, #ff8533);
+            color: white;
+            padding: 1rem 0;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 1rem;
+        }
+
+        .banner-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            display: none;
+        }
+
+        .banner-content.active {
+            display: block;
+        }
+
+        .banner-label {
+            font-size: 0.9rem;
+            font-weight: 600;
+            opacity: 0.9;
+            display: block;
+            margin-bottom: 0.3rem;
+        }
+
+        .banner-title {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 0.3rem;
+            transition: opacity 0.3s ease;
+        }
+
+        .banner-title:hover {
+            opacity: 0.8;
+            text-decoration: underline;
+        }
+
+        .banner-description {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            line-height: 1.4;
+            display: block;
+        }
+
+        .banner-loading {
+            text-align: center;
+            padding: 0.5rem;
+            opacity: 0.9;
+            font-style: italic;
+        }
+
+        @media (max-width: 768px) {
+            .latest-banner {
+                margin: 1rem;
+                border-radius: 6px;
+            }
+
+            .banner-title {
+                font-size: 1rem;
+            }
+
+            .banner-description {
+                font-size: 0.85rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -44,6 +121,16 @@
     </header>
 
     <main>
+        <!-- Latest Content Banner -->
+        <div id="latest-banner" class="latest-banner">
+            <div class="banner-content">
+                <span class="banner-label">Latest from Wiki:</span>
+                <a href="#" class="banner-title" id="banner-link"></a>
+                <span class="banner-description" id="banner-description"></span>
+            </div>
+            <div class="banner-loading" id="banner-loading">Loading latest content...</div>
+        </div>
+
         <section class="content-section">
             <h2>Audio Programmer & DSP Developer</h2>
             <p>
@@ -81,6 +168,98 @@
             </div>
         </section>
     </main>
+
+    <script src="js/latest-content.js"></script>
+    <script>
+        class LatestContentBanner {
+            constructor() {
+                this.bannerElement = document.getElementById('latest-banner');
+                this.bannerContent = document.querySelector('.banner-content');
+                this.bannerLoading = document.getElementById('banner-loading');
+                this.bannerLink = document.getElementById('banner-link');
+                this.bannerDescription = document.getElementById('banner-description');
+
+                this.init();
+            }
+
+            async init() {
+                try {
+                    // Get the latest content from our data file
+                    const latestContent = await this.fetchLatestContent();
+                    if (latestContent) {
+                        this.displayContent(latestContent);
+                    } else {
+                        this.hideBanner();
+                    }
+                } catch (error) {
+                    console.warn('Failed to load latest content:', error);
+                    this.hideBanner();
+                }
+            }
+
+            async fetchLatestContent() {
+                try {
+                    // Check if we have the latest content data available
+                    if (typeof window.latestContent === 'undefined') {
+                        return null;
+                    }
+
+                    // Get the most recent article from wiki
+                    const wikiArticles = window.latestContent.wiki || [];
+                    if (wikiArticles.length > 0) {
+                        const latest = wikiArticles[0]; // First article is the most recent
+                        return {
+                            type: 'wiki',
+                            title: latest.title,
+                            url: latest.url,
+                            description: this.truncateDescription(latest.description),
+                            timestamp: Date.now()
+                        };
+                    }
+
+                    // Future: Add Google Sheets integration here
+                    // Check for latest movies, books, poems from sheets
+
+                    return null;
+                } catch (error) {
+                    console.error('Error fetching content:', error);
+                    return null;
+                }
+            }
+
+            // Future method for Google Sheets integration
+            async fetchSheetsContent() {
+                // This will be implemented when Google Sheets integration is needed
+                // It should check for updates in movies, books, poems sheets
+                // and return the most recently updated item
+                return null;
+            }
+
+            truncateDescription(description, maxLength = 120) {
+                if (description.length <= maxLength) return description;
+                return description.substring(0, maxLength).trim() + '...';
+            }
+
+            displayContent(content) {
+                this.bannerLink.textContent = content.title;
+                this.bannerLink.href = content.url;
+                this.bannerDescription.textContent = content.description;
+
+                this.bannerLoading.style.display = 'none';
+                this.bannerContent.classList.add('active');
+            }
+
+            hideBanner() {
+                this.bannerElement.style.display = 'none';
+            }
+
+        }
+
+        // Initialize the banner when the page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            new LatestContentBanner();
+        });
+    </script>
 
 </body>
 </html>
