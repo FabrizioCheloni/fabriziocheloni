@@ -1,0 +1,1290 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&display=swap" rel="stylesheet">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technical Wiki | Fabrizio Cheloni</title>
+    <meta name="description" content="Technical documentation and knowledge base covering C++, audio programming, performance optimization, and software engineering best practices.">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .search-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        
+        .search-box {
+            width: 100%;
+            padding: 1rem;
+            font-size: 1.1rem;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-family: 'Afacad Flux', sans-serif;
+        }
+        
+        .search-box:focus {
+            outline: none;
+            border-color: #ff6600;
+        }
+        
+        .wiki-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        
+        .category {
+            margin: 2rem 0;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .category-header {
+            background: #f8f8f8;
+            padding: 1rem;
+            margin: 0;
+            font-size: 1.3rem;
+            color: #333;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .category-header:hover {
+            background: #f0f0f0;
+        }
+        
+        .category-content {
+            display: none;
+            padding: 1rem;
+        }
+        
+        .category-content.active {
+            display: block;
+        }
+        
+        .article {
+            margin: 1.5rem 0;
+            padding: 1rem;
+            border-left: 4px solid #ff6600;
+            background: #fafafa;
+            border-radius: 4px;
+        }
+        
+        .article-title {
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        
+        .article-title a {
+            color: #333;
+            text-decoration: none;
+        }
+        
+        .article-title a:hover {
+            color: #ff6600;
+        }
+        
+        .article-description {
+            color: #666;
+            margin-bottom: 0.8rem;
+            line-height: 1.5;
+        }
+        
+        .article-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        
+        .tag {
+            background: #e8e8e8;
+            padding: 0.3rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            color: #555;
+        }
+        
+        .expand-icon {
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .category.expanded .expand-icon {
+            transform: rotate(180deg);
+        }
+        
+        .no-results {
+            text-align: center;
+            padding: 2rem;
+            color: #666;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-info">
+            <h1><a href="index.html">Fabrizio Cheloni</a></h1>
+            <h2>Audio Programmer</h2>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="skills.html">Services</a></li>
+                <li><a href="contact.html">Contacts</a></li>
+                <li><a href="wiki.html">Wiki</a></li>
+                <li><a href="https://audiokids.it/" target="_blank" class="cyan-link">Audiokids</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="content-section">
+            <h2>Technical Wiki</h2>
+            <p>A curated collection of technical articles covering C++, audio programming, software engineering practices, and development tools.</p>
+            
+            <div class="search-container">
+                <input type="text" class="search-box" id="searchBox" placeholder="Search articles by title, description, or tags...">
+            </div>
+            
+            <div class="no-results" id="noResults">
+                <p>No articles found matching your search.</p>
+            </div>
+        </section>
+
+        <div class="wiki-content">
+            <!-- C++ Programming -->
+            <div class="category" data-category="cpp">
+                <h3 class="category-header" onclick="toggleCategory('cpp')">
+                    C++ Programming
+                    <span class="expand-icon">▼</span>
+                </h3>
+                <div class="category-content" id="cpp-content">
+                    
+                    <div class="article" data-searchable="initializer list basics C++ standard library initialization modern language features">
+                        <div class="article-title">
+                            <a href="https://www.cppstories.com/2023/initializer_list_basics/" target="_blank">Initializer List Basics</a>
+                        </div>
+                        <div class="article-description">
+                            Explores std::initializer_list in C++, explaining its internal mechanics and demonstrating use cases such as container initialization, creating custom container-like objects, and flexible function parameter handling.
+                        </div>
+                        <div class="article-tags">
+                            <span class="tag">C++</span>
+                            <span class="tag">Standard Library</span>
+                            <span class="tag">Initialization</span>
+                            <span class="tag">Modern C++</span>
+                        </div>
+                    </div>
+
+                    <div class="article" data-searchable="string processing C++ operations text manipulation standard library">
+                        <div class="article-title">
+                            <a href="https://www.cppstories.com/2023/six-handy-ops-for-string-processing/" target="_blank">Six Handy Operations for String Processing</a>
+                        </div>
+                        <div class="article-description">
+                            Covers useful string processing operations in C++, providing practical examples for common text manipulation tasks and demonstrating efficient approaches to string handling.
+                        </div>
+                        <div class="article-tags">
+                            <span class="tag">C++</span>
+                            <span class="tag">String Processing</span>
+                            <span class="tag">Standard Library</span>
+                            <span class="tag">Text Manipulation</span>
+                        </div>
+                    </div>
+
+                    <div class="article" data-searchable="fromchars C++ string conversion parsing standard library performance">
+                        <div class="article-title">
+                            <a href="https://www.cppstories.com/2018/12/fromchars/" target="_blank">From Chars - Fast String to Number Conversion</a>
+                        </div>
+                        <div class="article-description">
+                            Discusses the from_chars function in C++17 for efficient string-to-number conversion, comparing performance with traditional parsing methods and showing practical usage examples.
+                        </div>
+                        <div class="article-tags">
+                            <span class="tag">C++17</span>
+                            <span class="tag">String Conversion</span>
+                            <span class="tag">Performance</span>
+                            <span class="tag">Parsing</span>
+                        </div>
+                    </div>
+
+                    <div class="article" data-searchable="constexpr number parsing C++ compile time C++23">
+                        <div class="article-title">
+                            <a href="https://www.cppstories.com/2024/constexpr-number-parsing-cpp23/" target="_blank">Constexpr Number Parsing in C++23</a>
+                        </div>
+                        <div class="article-description">
+                            Explores compile-time number parsing capabilities in C++23, demonstrating how constexpr functions can be used for parsing numbers at compile time for improved performance.
+                        </div>
+                        <div class="article-tags">
+                            <span class="tag">C++23</span>
+                            <span class="tag">Constexpr</span>
+                            <span class="tag">Compile-time</span>
+                            <span class="tag">Number Parsing</span>
+                        </div>
+                    </div>
+
+                    <div class="article" data-searchable="expected C++23 error handling monadic operations optional">
+                        <div class="article-title">
+                            <a href="https://www.cppstories.com/2024/expected-cpp23/" target="_blank">Expected in C++23</a>
+                        </div>
+                        <div class="article-description">
+                            Introduces std::expected in C++23, a type that represents either a value or an error, providing a safer alternative to exceptions for error handling in C++.
+                        </div>
+                        <div class="article-tags">
+                            <span class="tag">C++23</span>
+                            <span class="tag">Error Handling</span>
+                            <span class="tag">Expected</span>
+                            <span class="tag">Modern C++</span>
+                        </div>
+                    </div>
+
+                    <div class="article" data-searchable="monadic optional operations C++23 functional programming">
+                        <div class="article-title">
+                            <a href="https://www.cppstories.com/2023/monadic-optional-ops-cpp23/" target="_blank">Monadic Optional Operations in C++23</a>
+                        </div>
+                        <div class="article-description">
+                            Covers the new monadic operations for std::optional in C++23, including and_then, or_else, and transform, enabling more functional programming patterns in C++.
+                        </div>
+                        <div class="article-tags">
+                            <span class="tag">C++23</span>
+                            <span class="tag">Optional</span>
+                            <span class="tag">Functional Programming</span>
+                            <span class="tag">Monadic Operations</span>
+                        </div>
+                    </div>
+
+                    <div class="article" data-searchable="pipe operator C++ functional programming syntax enhancement">
+                        <div class="article-title">
+                            <a href="https://www.cppstories.com/2024/pipe-operator/" target="_blank">The Pipe Operator in C++</a>
+                        </div>
+                        <div class="article-description">
+                            Explores the proposed pipe operator for C++, demonstrating how it can improve code readability and enable more functional programming patterns in C++.
+                        </div>
+                        <div class="article-tags">
+                            <span class="tag">C++</span>
+                            <span class="tag">Pipe Operator</span>
+                            <span class="tag">Functional Programming</span>
+                            <span class="tag">Syntax</span>
+                        </div>
+                    </div>
+
+                    <div class="article" data-searchable="function overloading C++ template features modern language">
+                        <div class="article-title">
+                            <a href="https://www.cppstories.com/2019/02/2lines3featuresoverload.html/" target="_blank">2 Lines, 3 Features: Function Overloading</a>
+                        </div>
+                        <div class="article-description">
+                            Demonstrates how to leverage multiple C++ features in just a few lines of code, focusing on function overloading and template techniques for clean, efficient code.
+                        </div>
+                        <div class="article-tags">
+                            <span class="tag">C++</span>
+                            <span class="tag">Function Overloading</span>
+                            <span class="tag">Templates</span>
+                            <span class="tag">Code Design</span>
+                        </div>
+                    </div>
+
+                    <div class="article" data-searchable="enum improvements C++ enumerations type safety modern">
+                        <div class="article-title">
+                            <a href="https://www.cppstories.com/2024/enum-improvements/" target="_blank">Enum Improvements in Modern C++</a>
+                        </div>
+                        <div class="article-description">
+                            Covers the evolution of enums in modern C++, including scoped enums, underlying types, and best practices for type-safe enumeration usage.
+                        </div>
+                        <div class="article-tags">
+                            <span class="tag">C++</span>
+                            <span class="tag">Enums</span>
+                            <span class="tag">Type Safety</span>
+                            <span class="tag">Modern C++</span>
+                        </div>
+                    </div>
+
+                    <div class="article" data-searchable="enum class bitmasks C++ flags bit operations type safety">
+                        <div class="article-title">
+                            <a href="https://voithos.io/articles/enum-class-bitmasks/" target="_blank">Enum Class Bitmasks</a>
+                        </div>
+                        <div class="article-description">
+                            Shows how to create type-safe bitmasks using enum classes in C++, providing a modern approach to flag handling with enhanced type safety and readability.
+                        </div>
+                        <div class="article-tags">
+                            <span class="tag">C++</span>
+                            <span class="tag">Enum Class</span>
+                            <span class="tag">Bitmasks</span>
+                            <span class="tag">Type Safety</span>
+                        </div>
+                    </div>
+
+                    <div class="article" data-searchable="arithmetic types C++ numeric types precision programming">
+                        <div class="article-title">
+                            <a href="https://biowpn.github.io/bioweapon/2024/08/29/arithmetic-types-in-cpp.html" target="_blank">Arithmetic Types in C++</a>
+                        </div>
+                        <div class="article-description">
+                            Deep dive into C++ arithmetic types, covering integer and floating-point types, their sizes, precision, and best practices for numeric computations.
+                        </div>
+                        <div class="article-tags">
+                            <span class="tag">C++</span>
+                            <span class="tag">Arithmetic Types</span>
+                            <span class="tag">Numeric Programming</span>
+                            <span class="tag">Type System</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Memory & Performance -->
+            <div class="category" data-category="performance">
+                <h3 class="category-header" onclick="toggleCategory('performance')">
+                    Memory & Performance
+                    <span class="expand-icon">▼</span>
+                </h3>
+                <div class="category-content" id="performance-content">
+                    
+                    <div class="article" data-searchable="std::move performance C++ move semantics optimization memory">
+                        <div class="article-title">
+                            <a href="https://voithos.io/articles/std-move-is-not-free/" target="_blank">std::move is Not Free</a>
+                        </div>
+                        <div class="article-description">
+                            Explains that std::move() is not inherently free, as its efficiency depends on the object type. Shows how moves can be efficient for dynamic resources but equivalent to copies for simple types.
+                        </div>
+                        <div class="article-tags">
+                            <span class="tag">C++</span>
+                            <span class="tag">Move Semantics</span>
+                            <span class="tag">Performance</span>
+                            <span class="tag">Memory Management</span>
+                        </div>
+                    </div>
+
+                    <div class="article" data-searchable="struct packing memory optimization C++ alignment padding performance">
+                        <div class="article-title">
+                            <a href="https://www.joshcaratelli.com/blog/struct-packing" target="_blank">Struct Packing and Memory Optimization</a>
+                        </div>
+                        <div class="article-description">
+                            Explains struct packing in C/C++, demonstrating how to optimize memory usage by ordering struct members strategically and understanding compiler padding behavior.
+                        </div>
+                        <div class="article-tags">
+                            <span class="tag">C++</span>
+                            <span class="tag">Memory Optimization</span>
+                            <span class="tag">Struct Packing</span>
+                            <span class="tag">Performance</span>
+                        </div>
+                    </div>
+
+                    <div class="article" data-searchable="code optimization C++ performance compiler daily bite">
+                        <div class="article-title">
+                            <a href="https://simontoth.substack.com/p/daily-bite-of-c-optimizing-code-to" target="_blank">Daily Bite of C++: Optimizing Code</a>
+                        </div>
+                        <div class="article-description">
+                            Practical tips for optimizing C++ code, covering compiler optimizations, algorithmic improvements, and performance measurement techniques for better program efficiency.
+                        </div>
+                        <div class="article-tags">
+                            <span class="tag">C++</span>
+                            <span class="tag">Optimization</span>
+                            <span class="tag">Performance</span>
+                            <span class="tag">Compiler</span>
+                        </div>
+                    </div>
+
+                    <div class="article" data-searchable="class layout performance C++ software object memory cache">
+                        <div class="article-title">
+                            <a href="https://johnnysswlab.com/software-performance-and-class-layout/" target="_blank">Software Performance and Class Layout</a>
+                        </div>
+                        <div class="article-description">
+                            Analyzes how class and struct layout affects software performance in C++, discussing memory alignment, cache efficiency, and data structure design for optimal performance.
+                        </div>
+                        <div class="article-tags">
+                            <span class="tag">C++</span>
+                            <span class="tag">Performance</span>
+                            <span class="tag">Class Layout</span>
+                            <span class="tag">Cache Efficiency</span>
+                        </div>
+                    </div>
+
+                    <div class="article" data-searchable="shared_ptr problems C++ smart pointers memory management performance">
+                        <div class="article-title">
+                            <a href="https://ddanilov.me/shared-ptr-is-evil/" target="_blank">shared_ptr is Evil</a>
+                        </div>
+                        <div class="article-description">
+                            Critical analysis of std::shared_ptr usage in C++, discussing performance implications, ownership semantics, and when to avoid shared ownership patterns.
+                        </div>
+                        <div class="article-tags">
+                            <span class="tag">C++</span>
+                            <span class="tag">Smart Pointers</span>
+                            <span class="tag">Memory Management</span>
+                            <span class="tag">Performance</span>
+                        </div>
+                    </div>
+
+                    <div class="article" data-searchable="allocating shared_ptr efficiently C++ memory performance smart pointers">
+                        <div class="article-title">
+                            <a href="https://www.lukas-barth.net/blog/efficiently-allocating-shared-ptr/" target="_blank">Efficiently Allocating shared_ptr</a>
+                        </div>
+                        <div class="article-description">
+                            Explores efficient allocation strategies for std::shared_ptr in C++, including make_shared usage, memory layout considerations, and performance optimization techniques.
+                        </div>
+                        <div class="article-tags">
+                            <span class="tag">C++</span>
+                            <span class="tag">Smart Pointers</span>
+                            <span class="tag">Memory Allocation</span>
+                            <span class="tag">Performance</span>
+                        </div>
+                    </div>
+
+                    <div class="article" data-searchable="complexity analysis algorithms C++ performance big O time space">
+                        <div class="article-title">
+                            <a href="https://www.sandordargo.com/blog/2023/11/15/most-important-complexities" target="_blank">Most Important Complexities</a>
+                        </div>
+                        <div class="article-description">
+                            Covers the most important time and space complexities in algorithm analysis, providing practical examples and guidance for performance-conscious programming.
+                        </div>
+                        <div class="article-tags">
+                            <span class="tag">Algorithms</span>
+                            <span class="tag">Complexity</span>
+                            <span class="tag">Performance</span>
+                            <span class="tag">Big O</span>
+                        </div>
+                    </div>
+
+                    <div class="article" data-searchable="RAII C++ resource management memory safety automatic cleanup">
+                        <div class="article-title">
+                            <a href="https://biowpn.github.io/bioweapon/2024/03/05/raii-all-the-things.html" target="_blank">RAII All The Things</a>
+                        </div>
+                        <div class="article-description">
+                            Comprehensive guide to Resource Acquisition Is Initialization (RAII) in C++, demonstrating how to use RAII for automatic resource management and memory safety.
+                        </div>
+                        <div class="article-tags">
+                            <span class="tag">C++</span>
+                            <span class="tag">RAII</span>
+                            <span class="tag">Resource Management</span>
+                            <span class="tag">Memory Safety</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Build Systems & Compilation -->
+            <div class="category" data-category="build">
+                <h3 class="category-header" onclick="toggleCategory('build')">
+                    Build Systems & Compilation
+                    <span class="expand-icon">▼</span>
+                </h3>
+                <div class="category-content" id="build-content">
+                    
+                    <div class="article" data-searchable="dynamic loading library Mac C++ runtime linking shared libraries">
+                        <div class="article-title">
+                            <a href="http://clarkkromenaker.com/post/library-dynamic-loading-mac/" target="_blank">Library Dynamic Loading on Mac</a>
+                        </div>
+                        <div class="article-description">
+                            Explains how to dynamically load libraries at runtime on macOS, covering dlopen, dlsym, and the intricacies of shared library loading in C++ applications.
+                        </div>
+                        <div class="article-tags">
+                            <span class="tag">macOS</span>
+                            <span class="tag">Dynamic Loading</span>
+                            <span class="tag">Shared Libraries</span>
+                            <span class="tag">C++</span>
+                        </div>
+                    </div>
+
+                    <div class="article" data-searchable="compilation process C program compiler linking preprocessing assembly">
+                        <div class="article-title">
+                            <a href="https://hackthedeveloper.com/c-program-compilation-process/" target="_blank">C Program Compilation Process</a>
+                        </div>
+                        <div class="article-description">
+                            Detailed walkthrough of the C compilation process, from preprocessing to linking, explaining each stage and how source code transforms into executable programs.
+                        </div>
+                        <div class="article-tags">
+                            <span class="tag">C</span>
+                            <span class="tag">Compilation</span>
+                            <span class="tag">Compiler</span>
+                            <span class="tag">Build Process</span>
+                        </div>
+                    </div>
+
+                    <div class="article" data-searchable="header include directories CMake C++ build system configuration">
+                        <div class="article-title">
+                            <a href="https://matgomes.com/header-include-directories-cmake/" target="_blank">Header Include Directories in CMake</a>
+                        </div>
+                        <div class="article-description">
+                            Guide to managing header include directories in CMake, covering target_include_directories, PUBLIC/PRIVATE/INTERFACE keywords, and best practices for C++ projects.
+                        </div>
+                        <div class="article-tags">
+                            <span class="tag">CMake</span>
+                            <span class="tag">Build System</span>
+                            <span class="tag">C++</span>
+                            <span class="tag">Headers</span>
+                        </div>
+                    </div>
+
+                    <div class="article" data-searchable="zero to cmake build system C++ project setup configuration tutorial">
+                        <div class="article-title">
+                            <a href="https://buchanan.one/blog/zero-to-cmake/" target="_blank">Zero to CMake</a>
+                        </div>
+                        <div class="article-description">
+                            Comprehensive tutorial for beginners to learn CMake from scratch, covering project setup, dependencies, and modern CMake best practices for C++ development.
+                        </div>
+                        <div class="article-tags">
+                            <span class="tag">CMake</span>
+                            <span class="tag">Build System</span>
+                            <span class="tag">Tutorial</span>
+                            <span class="tag">C++</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Advanced C++ Concepts -->
+            <div class="category" data-category="advanced">
+                <h3 class="category-header" onclick="toggleCategory('advanced')">
+                    Advanced C++ Concepts
+                    <span class="expand-icon">▼</span>
+                </h3>
+                <div class="category-content" id="advanced-content">
+                    
+                    <div class="article" data-searchable="if constexpr requires C++ templates metaprogramming concept constraints">
+                        <div class="article-title">
+                            <a href="https://www.think-cell.com/en/career/devblog/if-constexpr-requires-requires-requires" target="_blank">if constexpr requires requires requires</a>
+                        </div>
+                        <div class="article-description">
+                            Deep dive into advanced C++ template metaprogramming, exploring the intricate relationships between if constexpr, requires clauses, and concept definitions.
+                        </div>
+                        <div class="article-tags">
+                            <span class="tag">C++</span>
+                            <span class="tag">Templates</span>
+                            <span class="tag">Concepts</span>
+                            <span class="tag">Metaprogramming</span>
+                        </div>
+                    </div>
+
+                    <div class="article" data-searchable="template best practices C++ metaprogramming design patterns modern">
+                        <div class="article-title">
+                            <a href="https://cpp.bioweapon.dev/2024/09/30/template-best-practices.html" target="_blank">Template Best Practices</a>
+                        </div>
+                        <div class="article-description">
+                            Comprehensive guide to C++ template best practices, covering design patterns, error handling, and techniques for writing maintainable template code.
+                        </div>
+                        <div class="article-tags">
+                            <span class="tag">C++</span>
+                            <span class="tag">Templates</span>
+                            <span class="tag">Best Practices</span>
+                            <span class="tag">Design Patterns</span>
+                        </div>
+                    </div>
+
+                    <div class="article" data-searchable="concepts vs type traits C++ template metaprogramming constraints">
+                        <div class="article-title">
+                            <a href="https://akrzemi1.wordpress.com/2025/05/24/concepts-vs-type-traits/" target="_blank">Concepts vs Type Traits</a>
+                        </div>
+                        <div class="article-description">
+                            Comparison between C++20 concepts and traditional type traits, discussing when to use each approach and their respective advantages in template programming.
+                        </div>
+                        <div class="article-tags">
+                            <span class="tag">C++20</span>
+                            <span class="tag">Concepts</span>
+                            <span class="tag">Type Traits</span>
+                            <span class="tag">Templates</span>
+                        </div>
+                    </div>
+
+                    <div class="article" data-searchable="opaque pointer pattern C++ pimpl idiom encapsulation design patterns">
+                        <div class="article-title">
+                            <a href="https://danielsieger.com/blog/2024/08/02/cpp-opaque-pointer-pattern.html" target="_blank">C++ Opaque Pointer Pattern</a>
+                        </div>
+                        <div class="article-description">
+                            Explains the opaque pointer (PIMPL) pattern in C++, demonstrating how to achieve better encapsulation and reduce compilation dependencies in large codebases.
+                        </div>
+                        <div class="article-tags">
+                            <span class="tag">C++</span>
+                            <span class="tag">Design Patterns</span>
+                            <span class="tag">PIMPL</span>
+                            <span class="tag">Encapsulation</span>
+                        </div>
+                    </div>
+
+                    <div class="article" data-searchable="observable property C++ design pattern reactive programming">
+                        <div class="article-title">
+                            <a href="https://github.com/JanWilczek/observable-property" target="_blank">Observable Property Pattern</a>
+                        </div>
+                        <div class="article-description">
+                            Implementation of the observable property pattern in C++, enabling reactive programming paradigms with automatic notification of property changes.
+                        </div>
+                        <div class="article-tags">
+                            <span class="tag">C++</span>
+                            <span class="tag">Design Patterns</span>
+                            <span class="tag">Reactive Programming</span>
+                            <span class="tag">Observer Pattern</span>
+                        </div>
+                    </div>
+
+                    <div class="article" data-searchable="efficient programming components C++ architecture design system performance">
+                        <div class="article-title">
+                            <a href="https://www.jmeiners.com/efficient-programming-with-components/" target="_blank">Efficient Programming with Components</a>
+                        </div>
+                        <div class="article-description">
+                            Explores component-based programming in C++, discussing how to design efficient, modular systems using component architecture patterns for better performance and maintainability.
+                        </div>
+                        <div class="article-tags">
+                            <span class="tag">C++</span>
+                            <span class="tag">Architecture</span>
+                            <span class="tag">Components</span>
+                            <span class="tag">Performance</span>
+                        </div>
+                    </div>
+
+                    <div class="article" data-searchable="tetrads C++ data structures algorithms efficient programming">
+                        <div class="article-title">
+                            <a href="https://20k.github.io/c++/2024/06/19/tetrads.html" target="_blank">Tetrads in C++</a>
+                        </div>
+                        <div class="article-description">
+                            Introduction to tetrads as a data structure concept in C++, exploring their applications in efficient algorithm design and memory-conscious programming.
+                        </div>
+                        <div class="article-tags">
+                            <span class="tag">C++</span>
+                            <span class="tag">Data Structures</span>
+                            <span class="tag">Algorithms</span>
+                            <span class="tag">Memory Efficiency</span>
+                        </div>
+                    </div>
+
+                    <div class="article" data-searchable="reflection compile time UML C++26 metaprogramming introspection">
+                        <div class="article-title">
+                            <a href="https://www.reachablecode.com/2025/07/31/c26-reflections-adventures-compile-time-uml/" target="_blank">C++26 Reflections: Adventures in Compile-time UML</a>
+                        </div>
+                        <div class="article-description">
+                            Explores the upcoming reflection features in C++26, demonstrating how compile-time introspection can be used to generate UML diagrams and enhance metaprogramming capabilities.
+                        </div>
+                        <div class="article-tags">
+                            <span class="tag">C++26</span>
+                            <span class="tag">Reflection</span>
+                            <span class="tag">Compile-time</span>
+                            <span class="tag">Metaprogramming</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Concurrency -->
+            <div class="category" data-category="concurrency">
+                <h3 class="category-header" onclick="toggleCategory('concurrency')">
+                    Concurrency & Threading
+                    <span class="expand-icon">▼</span>
+                </h3>
+                <div class="category-content" id="concurrency-content">
+                    
+                    <div class="article" data-searchable="atomic operations C++ concurrency threading memory model synchronization">
+                        <div class="article-title">
+                            <a href="https://brilliantsugar.github.io/posts/how-i-learned-to-stop-worrying-and-love-juggling-c++-atomics/" target="_blank">How I Learned to Stop Worrying and Love Juggling C++ Atomics</a>
+                        </div>
+                        <div class="article-description">
+                            Personal journey into understanding C++ atomic operations, covering memory ordering, synchronization primitives, and practical approaches to concurrent programming.
+                        </div>
+                        <div class="article-tags">
+                            <span class="tag">C++</span>
+                            <span class="tag">Atomics</span>
+                            <span class="tag">Concurrency</span>
+                            <span class="tag">Threading</span>
+                        </div>
+                    </div>
+
+                    <div class="article" data-searchable="atomics concurrency systems programming memory synchronization parallel">
+                        <div class="article-title">
+                            <a href="https://redixhumayun.github.io/systems/2024/01/03/atomics-and-concurrency.html" target="_blank">Atomics and Concurrency</a>
+                        </div>
+                        <div class="article-description">
+                            Deep dive into atomic operations and concurrency in systems programming, explaining memory models, race conditions, and synchronization techniques for parallel programming.
+                        </div>
+                        <div class="article-tags">
+                            <span class="tag">Systems Programming</span>
+                            <span class="tag">Atomics</span>
+                            <span class="tag">Concurrency</span>
+                            <span class="tag">Parallel Programming</span>
+                        </div>
+                    </div>
+
+                    <div class="article" data-searchable="threading Windows synchronization concurrency mutex critical section">
+                        <div class="article-title">
+                            <a href="https://devblogs.microsoft.com/oldnewthing/20240814-00/?p=110129" target="_blank">Windows Threading and Synchronization</a>
+                        </div>
+                        <div class="article-description">
+                            Microsoft's insights into Windows threading and synchronization primitives, covering mutexes, critical sections, and platform-specific concurrency considerations.
+                        </div>
+                        <div class="article-tags">
+                            <span class="tag">Windows</span>
+                            <span class="tag">Threading</span>
+                            <span class="tag">Synchronization</span>
+                            <span class="tag">Concurrency</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Security & Safety -->
+            <div class="category" data-category="security">
+                <h3 class="category-header" onclick="toggleCategory('security')">
+                    Security & Safety
+                    <span class="expand-icon">▼</span>
+                </h3>
+                <div class="category-content" id="security-content">
+                    
+                    <div class="article" data-searchable="safety security programming languages memory type thread safe coding">
+                        <div class="article-title">
+                            <a href="https://yoric.github.io/post/safety-and-security/" target="_blank">Safety and Security in Programming Languages</a>
+                        </div>
+                        <div class="article-description">
+                            Comprehensive analysis of safety and security concepts in programming languages, covering memory safety, type safety, thread safety, and their impact on software security.
+                        </div>
+                        <div class="article-tags">
+                            <span class="tag">Programming Languages</span>
+                            <span class="tag">Software Safety</span>
+                            <span class="tag">Security</span>
+                            <span class="tag">Type Systems</span>
+                        </div>
+                    </div>
+
+                    <div class="article" data-searchable="error model programming error handling exceptions safety resilient systems">
+                        <div class="article-title">
+                            <a href="https://joeduffyblog.com/2016/02/07/the-error-model/" target="_blank">The Error Model</a>
+                        </div>
+                        <div class="article-description">
+                            Comprehensive exploration of error handling strategies in programming languages, comparing exceptions, return codes, and other approaches for building resilient software systems.
+                        </div>
+                        <div class="article-tags">
+                            <span class="tag">Error Handling</span>
+                            <span class="tag">Programming Languages</span>
+                            <span class="tag">Software Engineering</span>
+                            <span class="tag">Resilience</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testing & QA -->
+            <div class="category" data-category="testing">
+                <h3 class="category-header" onclick="toggleCategory('testing')">
+                    Testing & Quality Assurance
+                    <span class="expand-icon">▼</span>
+                </h3>
+                <div class="category-content" id="testing-content">
+                    
+                    <div class="article" data-searchable="data flow testing comprehensive guide QA quality assurance software testing">
+                        <div class="article-title">
+                            <a href="https://www.stickyminds.com/article/data-flow-testing-comprehensive-guide" target="_blank">Data Flow Testing: A Comprehensive Guide</a>
+                        </div>
+                        <div class="article-description">
+                            Complete guide to data flow testing methodology, covering test case design, data dependency analysis, and systematic approaches to testing data transformations in software.
+                        </div>
+                        <div class="article-tags">
+                            <span class="tag">Software Testing</span>
+                            <span class="tag">Data Flow Testing</span>
+                            <span class="tag">QA</span>
+                            <span class="tag">Test Design</span>
+                        </div>
+                    </div>
+
+                    <div class="article" data-searchable="metamorphic testing software testing property based testing quality assurance">
+                        <div class="article-title">
+                            <a href="https://www.hillelwayne.com/post/metamorphic-testing/" target="_blank">Metamorphic Testing</a>
+                        </div>
+                        <div class="article-description">
+                            Innovative software testing approach that evaluates systems by applying transformations to inputs and checking for consistent outputs, particularly useful for complex systems like ML models.
+                        </div>
+                        <div class="article-tags">
+                            <span class="tag">Software Testing</span>
+                            <span class="tag">Quality Assurance</span>
+                            <span class="tag">Machine Learning</span>
+                            <span class="tag">Property-Based Testing</span>
+                        </div>
+                    </div>
+
+                    <div class="article" data-searchable="metamorphic testing property based QA software engineering validation">
+                        <div class="article-title">
+                            <a href="https://www.stickyminds.com/article/metamorphic-testing" target="_blank">Metamorphic Testing Methodology</a>
+                        </div>
+                        <div class="article-description">
+                            Detailed methodology for implementing metamorphic testing in software projects, with practical examples and guidelines for creating effective metamorphic test cases.
+                        </div>
+                        <div class="article-tags">
+                            <span class="tag">Software Testing</span>
+                            <span class="tag">Metamorphic Testing</span>
+                            <span class="tag">QA Methodology</span>
+                            <span class="tag">Test Strategy</span>
+                        </div>
+                    </div>
+
+                    <div class="article" data-searchable="QA team metrics quality assurance measurement testing effectiveness performance">
+                        <div class="article-title">
+                            <a href="https://www.stickyminds.com/article/uplifting-qa-teams-through-metrics" target="_blank">Uplifting QA Teams Through Metrics</a>
+                        </div>
+                        <div class="article-description">
+                            Guide to using metrics effectively in QA teams, covering key performance indicators, measurement strategies, and how to drive quality improvements through data-driven approaches.
+                        </div>
+                        <div class="article-tags">
+                            <span class="tag">QA</span>
+                            <span class="tag">Metrics</span>
+                            <span class="tag">Team Management</span>
+                            <span class="tag">Quality Assurance</span>
+                        </div>
+                    </div>
+
+                    <div class="article" data-searchable="mock objects testing C++ final classes unit testing design patterns">
+                        <div class="article-title">
+                            <a href="https://www.sandordargo.com/blog/2025/04/09/no-final-mock" target="_blank">No Final Mock</a>
+                        </div>
+                        <div class="article-description">
+                            Discusses challenges with mocking final classes in C++ unit testing, exploring alternative testing strategies and design patterns for testable code architecture.
+                        </div>
+                        <div class="article-tags">
+                            <span class="tag">C++</span>
+                            <span class="tag">Unit Testing</span>
+                            <span class="tag">Mock Objects</span>
+                            <span class="tag">Test Design</span>
+                        </div>
+                    </div>
+
+                    <div class="article" data-searchable="microservices testing integration testing distributed systems testing strategies">
+                        <div class="article-title">
+                            <a href="https://semaphoreci.com/blog/test-microservices" target="_blank">Testing Microservices</a>
+                        </div>
+                        <div class="article-description">
+                            Comprehensive guide to testing microservices architectures, covering unit testing, integration testing, contract testing, and end-to-end testing strategies for distributed systems.
+                        </div>
+                        <div class="article-tags">
+                            <span class="tag">Microservices</span>
+                            <span class="tag">Integration Testing</span>
+                            <span class="tag">Distributed Systems</span>
+                            <span class="tag">Testing Strategy</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Audio Programming -->
+            <div class="category" data-category="audio">
+                <h3 class="category-header" onclick="toggleCategory('audio')">
+                    Audio Programming & DSP
+                    <span class="expand-icon">▼</span>
+                </h3>
+                <div class="category-content" id="audio-content">
+                    
+                    <div class="article" data-searchable="JUCE mouse keyboard events GUI programming audio software user interface">
+                        <div class="article-title">
+                            <a href="https://melatonin.dev/blog/juce-component-mouse-and-keyboard/" target="_blank">JUCE Component Mouse and Keyboard Handling</a>
+                        </div>
+                        <div class="article-description">
+                            Comprehensive guide to handling mouse and keyboard events in JUCE Components, covering event propagation, focus management, and creating responsive audio software interfaces.
+                        </div>
+                        <div class="article-tags">
+                            <span class="tag">JUCE</span>
+                            <span class="tag">GUI Programming</span>
+                            <span class="tag">Event Handling</span>
+                            <span class="tag">C++</span>
+                        </div>
+                    </div>
+
+                    <div class="article" data-searchable="JUCE components GUI programming audio software framework user interface">
+                        <div class="article-title">
+                            <a href="https://melatonin.dev/blog/how-juce-components-work/" target="_blank">How JUCE Components Work</a>
+                        </div>
+                        <div class="article-description">
+                            Deep dive into the JUCE component system architecture, explaining the rendering pipeline, component hierarchy, and best practices for building efficient audio applications.
+                        </div>
+                        <div class="article-tags">
+                            <span class="tag">JUCE</span>
+                            <span class="tag">GUI Programming</span>
+                            <span class="tag">Component System</span>
+                            <span class="tag">Audio Development</span>
+                        </div>
+                    </div>
+
+                    <div class="article" data-searchable="audio reverb DSP algorithms digital signal processing effects">
+                        <div class="article-title">
+                            <a href="https://mental-reverb.com/blog.php" target="_blank">Mental Reverb Blog</a>
+                        </div>
+                        <div class="article-description">
+                            Technical blog covering reverb algorithms, DSP techniques, and audio effect implementation, with practical insights for audio software developers.
+                        </div>
+                        <div class="article-tags">
+                            <span class="tag">DSP</span>
+                            <span class="tag">Audio Effects</span>
+                            <span class="tag">Reverb</span>
+                            <span class="tag">Audio Programming</span>
+                        </div>
+                    </div>
+
+                    <div class="article" data-searchable="music DSP digital signal processing algorithms audio programming">
+                        <div class="article-title">
+                            <a href="https://www.musicdsp.org/en/latest/" target="_blank">Music DSP Collection</a>
+                        </div>
+                        <div class="article-description">
+                            Comprehensive collection of DSP algorithms, filters, and audio processing techniques with source code examples for music and audio applications.
+                        </div>
+                        <div class="article-tags">
+                            <span class="tag">DSP</span>
+                            <span class="tag">Audio Algorithms</span>
+                            <span class="tag">Music Technology</span>
+                            <span class="tag">Signal Processing</span>
+                        </div>
+                    </div>
+
+                    <div class="article" data-searchable="DAVE audio plugin framework C++ DSP digital audio workstation">
+                        <div class="article-title">
+                            <a href="https://github.com/maxmarsc/dave" target="_blank">DAVE - Digital Audio Visual Environment</a>
+                        </div>
+                        <div class="article-description">
+                            Open-source framework for developing audio plugins and digital audio workstation software, providing tools and abstractions for professional audio development.
+                        </div>
+                        <div class="article-tags">
+                            <span class="tag">Audio Plugins</span>
+                            <span class="tag">DAW</span>
+                            <span class="tag">C++</span>
+                            <span class="tag">Audio Framework</span>
+                        </div>
+                    </div>
+
+                    <div class="article" data-searchable="audio wave processing JavaScript web audio API sound manipulation">
+                        <div class="article-title">
+                            <a href="https://uttori.github.io/uttori-audio-wave/" target="_blank">Uttori Audio Wave Processing</a>
+                        </div>
+                        <div class="article-description">
+                            JavaScript library for audio wave processing and manipulation, providing tools for web-based audio applications and sound analysis.
+                        </div>
+                        <div class="article-tags">
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">Web Audio</span>
+                            <span class="tag">Wave Processing</span>
+                            <span class="tag">Audio Analysis</span>
+                        </div>
+                    </div>
+
+                    <div class="article" data-searchable="whisper speech recognition C++ audio processing machine learning">
+                        <div class="article-title">
+                            <a href="https://github.com/ggerganov/whisper.cpp/issues/66#issuecomment-1927210042" target="_blank">Whisper.cpp Implementation Discussion</a>
+                        </div>
+                        <div class="article-description">
+                            Technical discussion about implementing OpenAI's Whisper speech recognition model in C++, covering performance optimizations and practical deployment considerations.
+                        </div>
+                        <div class="article-tags">
+                            <span class="tag">Speech Recognition</span>
+                            <span class="tag">C++</span>
+                            <span class="tag">Machine Learning</span>
+                            <span class="tag">Audio Processing</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Development Tools -->
+            <div class="category" data-category="tools">
+                <h3 class="category-header" onclick="toggleCategory('tools')">
+                    Development Tools & Practices
+                    <span class="expand-icon">▼</span>
+                </h3>
+                <div class="category-content" id="tools-content">
+                    
+                    <div class="article" data-searchable="debugging C++ UI nightmare development tools GDB LLDB visual debugging">
+                        <div class="article-title">
+                            <a href="https://core-explorer.github.io/blog/c++/debugging/2025/01/19/debugging-c++-is-a-ui.nightmare.html" target="_blank">Debugging C++ is a UI Nightmare</a>
+                        </div>
+                        <div class="article-description">
+                            Critique of current C++ debugging tools and their user interfaces, discussing the challenges developers face and proposing improvements for debugging experiences.
+                        </div>
+                        <div class="article-tags">
+                            <span class="tag">C++</span>
+                            <span class="tag">Debugging</span>
+                            <span class="tag">Development Tools</span>
+                            <span class="tag">User Experience</span>
+                        </div>
+                    </div>
+
+                    <div class="article" data-searchable="google benchmark C++ performance measurement microbenchmarking profiling">
+                        <div class="article-title">
+                            <a href="https://ashvardanian.com/posts/google-benchmark/" target="_blank">Google Benchmark for C++</a>
+                        </div>
+                        <div class="article-description">
+                            Guide to using Google Benchmark library for C++ performance measurement, covering microbenchmarking techniques, statistical analysis, and performance optimization workflows.
+                        </div>
+                        <div class="article-tags">
+                            <span class="tag">C++</span>
+                            <span class="tag">Benchmarking</span>
+                            <span class="tag">Performance</span>
+                            <span class="tag">Profiling</span>
+                        </div>
+                    </div>
+
+                    <div class="article" data-searchable="code duplication software engineering refactoring clean code maintainability">
+                        <div class="article-title">
+                            <a href="https://voidstar.tech/code_duplication/" target="_blank">Understanding Code Duplication</a>
+                        </div>
+                        <div class="article-description">
+                            Analysis of code duplication in software projects, discussing when duplication is acceptable, refactoring strategies, and maintaining clean, maintainable codebases.
+                        </div>
+                        <div class="article-tags">
+                            <span class="tag">Software Engineering</span>
+                            <span class="tag">Code Quality</span>
+                            <span class="tag">Refactoring</span>
+                            <span class="tag">Clean Code</span>
+                        </div>
+                    </div>
+
+                    <div class="article" data-searchable="programming principles software engineering simplicity design philosophy">
+                        <div class="article-title">
+                            <a href="https://antirez.com/news/124" target="_blank">Programming Principles and Philosophy</a>
+                        </div>
+                        <div class="article-description">
+                            Insights from Salvatore Sanfilippo (antirez) on programming philosophy, software design principles, and approaches to building reliable, maintainable systems.
+                        </div>
+                        <div class="article-tags">
+                            <span class="tag">Software Engineering</span>
+                            <span class="tag">Programming Philosophy</span>
+                            <span class="tag">Design Principles</span>
+                            <span class="tag">System Design</span>
+                        </div>
+                    </div>
+
+                    <div class="article" data-searchable="logging best practices software engineering debugging monitoring observability">
+                        <div class="article-title">
+                            <a href="https://daily.dev/blog/12-logging-best-practices-dos-and-donts" target="_blank">12 Logging Best Practices: Dos and Don'ts</a>
+                        </div>
+                        <div class="article-description">
+                            Comprehensive guide to logging best practices in software development, covering log levels, structured logging, performance considerations, and debugging strategies.
+                        </div>
+                        <div class="article-tags">
+                            <span class="tag">Logging</span>
+                            <span class="tag">Best Practices</span>
+                            <span class="tag">Debugging</span>
+                            <span class="tag">Observability</span>
+                        </div>
+                    </div>
+
+                    <div class="article" data-searchable="log management monitoring observability systems administration devops">
+                        <div class="article-title">
+                            <a href="https://middleware.io/blog/log-management/" target="_blank">Log Management for Modern Applications</a>
+                        </div>
+                        <div class="article-description">
+                            Guide to implementing effective log management systems, covering log aggregation, analysis, retention policies, and monitoring strategies for production applications.
+                        </div>
+                        <div class="article-tags">
+                            <span class="tag">Log Management</span>
+                            <span class="tag">Monitoring</span>
+                            <span class="tag">DevOps</span>
+                            <span class="tag">System Administration</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Machine Learning & AI -->
+            <div class="category" data-category="ml">
+                <h3 class="category-header" onclick="toggleCategory('ml')">
+                    Machine Learning & AI
+                    <span class="expand-icon">▼</span>
+                </h3>
+                <div class="category-content" id="ml-content">
+                    
+                    <div class="article" data-searchable="TensorFlow model encryption mobile apps machine learning security deployment">
+                        <div class="article-title">
+                            <a href="https://medium.com/@ovechko.056/tensorflow-pretrained-model-encryption-decryption-in-mobile-apps-e3e95209716a" target="_blank">TensorFlow Model Encryption in Mobile Apps</a>
+                        </div>
+                        <div class="article-description">
+                            Guide to encrypting and decrypting TensorFlow pretrained models in mobile applications, covering security considerations and implementation strategies for protected AI deployment.
+                        </div>
+                        <div class="article-tags">
+                            <span class="tag">TensorFlow</span>
+                            <span class="tag">Mobile Development</span>
+                            <span class="tag">Model Security</span>
+                            <span class="tag">Encryption</span>
+                        </div>
+                    </div>
+
+                    <div class="article" data-searchable="PyTorch torch.load istream C++ machine learning model loading">
+                        <div class="article-title">
+                            <a href="https://discuss.pytorch.org/t/torch-load-with-istream/144104" target="_blank">PyTorch Model Loading with istream</a>
+                        </div>
+                        <div class="article-description">
+                            Discussion on loading PyTorch models using C++ istream, addressing integration challenges between PyTorch and C++ applications for model deployment.
+                        </div>
+                        <div class="article-tags">
+                            <span class="tag">PyTorch</span>
+                            <span class="tag">C++</span>
+                            <span class="tag">Model Loading</span>
+                            <span class="tag">Machine Learning</span>
+                        </div>
+                    </div>
+
+                    <div class="article" data-searchable="DVC model registry machine learning MLOps versioning deployment">
+                        <div class="article-title">
+                            <a href="https://dvc.org/doc/use-cases/model-registry" target="_blank">DVC Model Registry</a>
+                        </div>
+                        <div class="article-description">
+                            Guide to using Data Version Control (DVC) for model registry and versioning, covering MLOps workflows, model management, and deployment strategies for machine learning projects.
+                        </div>
+                        <div class="article-tags">
+                            <span class="tag">MLOps</span>
+                            <span class="tag">Model Registry</span>
+                            <span class="tag">Version Control</span>
+                            <span class="tag">Machine Learning</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- UI/UX & Design -->
+            <div class="category" data-category="ui">
+                <h3 class="category-header" onclick="toggleCategory('ui')">
+                    UI/UX & Design
+                    <span class="expand-icon">▼</span>
+                </h3>
+                <div class="category-content" id="ui-content">
+                    
+                    <div class="article" data-searchable="Nielsen Norman Group user experience UX design usability research">
+                        <div class="article-title">
+                            <a href="https://www.nngroup.com/articles/" target="_blank">Nielsen Norman Group Articles</a>
+                        </div>
+                        <div class="article-description">
+                            Collection of user experience research articles from industry leaders, covering usability principles, design patterns, and evidence-based UX practices for software interfaces.
+                        </div>
+                        <div class="article-tags">
+                            <span class="tag">UX Design</span>
+                            <span class="tag">Usability</span>
+                            <span class="tag">User Research</span>
+                            <span class="tag">Design Principles</span>
+                        </div>
+                    </div>
+
+                    <div class="article" data-searchable="usability heuristics Nielsen ten principles user interface design UX">
+                        <div class="article-title">
+                            <a href="https://www.nngroup.com/articles/ten-usability-heuristics/" target="_blank">Ten Usability Heuristics</a>
+                        </div>
+                        <div class="article-description">
+                            Jakob Nielsen's famous ten usability heuristics for user interface design, providing fundamental principles for creating intuitive and user-friendly software interfaces.
+                        </div>
+                        <div class="article-tags">
+                            <span class="tag">Usability</span>
+                            <span class="tag">UI Design</span>
+                            <span class="tag">Design Principles</span>
+                            <span class="tag">User Interface</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Learning Resources -->
+            <div class="category" data-category="learning">
+                <h3 class="category-header" onclick="toggleCategory('learning')">
+                    Learning Resources & References
+                    <span class="expand-icon">▼</span>
+                </h3>
+                <div class="category-content" id="learning-content">
+                    
+                    <div class="article" data-searchable="learning resources programming education computer science study materials">
+                        <div class="article-title">
+                            <a href="https://singhharleen.github.io/learning-resources.html" target="_blank">Comprehensive Learning Resources</a>
+                        </div>
+                        <div class="article-description">
+                            Curated collection of programming and computer science learning resources, including books, courses, tutorials, and practice materials for software developers.
+                        </div>
+                        <div class="article-tags">
+                            <span class="tag">Learning</span>
+                            <span class="tag">Programming Education</span>
+                            <span class="tag">Resources</span>
+                            <span class="tag">Computer Science</span>
+                        </div>
+                    </div>
+
+                    <div class="article" data-searchable="C++ algorithms book programming education data structures computer science">
+                        <div class="article-title">
+                            <a href="https://github.com/HappyCerberus/book-cpp-algorithms" target="_blank">C++ Algorithms Book</a>
+                        </div>
+                        <div class="article-description">
+                            Open-source book covering algorithms and data structures in C++, providing practical examples and explanations for computer science fundamentals in modern C++.
+                        </div>
+                        <div class="article-tags">
+                            <span class="tag">C++</span>
+                            <span class="tag">Algorithms</span>
+                            <span class="tag">Data Structures</span>
+                            <span class="tag">Education</span>
+                        </div>
+                    </div>
+
+                    <div class="article" data-searchable="programming tutorial video education software development learning">
+                        <div class="article-title">
+                            <a href="https://www.youtube.com/watch?v=kZ8rbhGgtv4" target="_blank">Programming Fundamentals Video Tutorial</a>
+                        </div>
+                        <div class="article-description">
+                            Comprehensive video tutorial covering programming fundamentals and software development concepts, suitable for developers looking to strengthen their foundation skills.
+                        </div>
+                        <div class="article-tags">
+                            <span class="tag">Programming</span>
+                            <span class="tag">Video Tutorial</span>
+                            <span class="tag">Education</span>
+                            <span class="tag">Software Development</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Toggle category visibility
+        function toggleCategory(categoryId) {
+            const content = document.getElementById(categoryId + '-content');
+            const category = content.closest('.category');
+            const icon = category.querySelector('.expand-icon');
+            
+            content.classList.toggle('active');
+            category.classList.toggle('expanded');
+        }
+
+        // Search functionality
+        document.getElementById('searchBox').addEventListener('input', function(e) {
+            const searchTerm = e.target.value.toLowerCase();
+            const articles = document.querySelectorAll('.article');
+            const categories = document.querySelectorAll('.category');
+            const noResults = document.getElementById('noResults');
+            let hasResults = false;
+
+            articles.forEach(article => {
+                const searchableContent = article.getAttribute('data-searchable') || '';
+                const title = article.querySelector('.article-title').textContent;
+                const description = article.querySelector('.article-description').textContent;
+                const allText = (searchableContent + ' ' + title + ' ' + description).toLowerCase();
+                
+                if (searchTerm === '' || allText.includes(searchTerm)) {
+                    article.style.display = 'block';
+                    hasResults = true;
+                } else {
+                    article.style.display = 'none';
+                }
+            });
+
+            // Show/hide categories based on visible articles
+            categories.forEach(category => {
+                const visibleArticles = category.querySelectorAll('.article[style="display: block"], .article:not([style*="display: none"])');
+                const shouldShow = searchTerm === '' || visibleArticles.length > 0;
+                
+                if (shouldShow) {
+                    category.style.display = 'block';
+                    // Auto-expand categories when searching
+                    if (searchTerm !== '') {
+                        category.classList.add('expanded');
+                        category.querySelector('.category-content').classList.add('active');
+                    }
+                } else {
+                    category.style.display = 'none';
+                }
+            });
+
+            // Show "no results" message
+            noResults.style.display = hasResults ? 'none' : 'block';
+        });
+
+        // Initialize with first category expanded
+        document.addEventListener('DOMContentLoaded', function() {
+            toggleCategory('cpp');
+        });
+    </script>
+</body>
+</html>
