@@ -8,10 +8,36 @@
 }
 
 .cyan-link {
-  color: cyan;
+  background: #00fff7;
+  color: #1b1f1f;
   margin: 0;
   font-size: 1.2em;
-  font-weight: normal;
+  font-weight: bold;
+  padding: 8px 16px;
+  border-radius: 20px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.cyan-link:hover {
+  background: #33fffa;
+  color: #1b1f1f;
+  transform: translateY(-1px);
+}
+
+/* Smaller version for content buttons */
+.cyan-link.content-button {
+  font-size: 1em;
+  padding: 6px 12px;
+}
+
+/* Active navigation state */
+nav ul li a.active {
+  background: #00fff7;
+  color: #1b1f1f;
+  padding: 4px 12px;
+  border-radius: 15px;
+  font-weight: bold;
 }
 
 .profile-photo {
@@ -62,7 +88,7 @@ header::after {
   height: 3px;
   background: linear-gradient(90deg, 
     transparent 0%, #00fff7 20%, transparent 25%,
-    transparent 30%, #f1ad03 50%, transparent 55%,
+    transparent 30%, #00fff7 50%, transparent 55%,
     transparent 60%, #00fff7 80%, transparent 100%);
   animation: waveform 4s ease-in-out infinite;
 }
@@ -229,7 +255,7 @@ section p {
   background: #f8f8f8;
   padding: 20px;
   border-radius: 8px;
-  border-left: 4px solid #f1ad03;
+  border-left: 4px solid #00fff7;
 }
 
 .tech-category h4 {
