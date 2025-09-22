@@ -2,6 +2,13 @@
 window.latestContent = {
     wiki: [
         {
+            title: "Sorry Rick Rubin, Vibe Coding Isn't Punk Rock",
+            url: "https://open.substack.com/pub/fabriziocheloni607361/p/sorry-rick-rubin-vibe-coding-isnt?r=2bfcii&utm_campaign=post&utm_medium=web&showWelcomeOnShare=false",
+            description: "Critiques the 'vibe coding' approach that relies heavily on AI tools, arguing that traditional programming is a creative, meditative process that involves deep problem-solving and modeling the world.",
+            category: "Development Tools & Practices",
+            dateAdded: "2025-01-22"
+        },
+        {
             title: "How to Replace Footstep Sounds in Pro Tools",
             url: "https://audiokids.it/replace-footstep-sounds/?_gl=1*1w4m9jv*_up*MQ..*_ga*OTEzMzUyNDAwLjE3NTc3NzIzNDc.*_ga_BWCZTWJWVK*czE3NTc3NzIzNDYkbzEkZzEkdDE3NTc3NzIzNTEkajU1JGwwJGgw*_ga_05HZH2V8JK*czE3NTc3NzIzNDYkbzEkZzEkdDE3NTc3NzIzNTEkajU1JGwwJGgw",
             description: "Step-by-step tutorial for manually replacing footstep sounds in Pro Tools using clip replacement techniques. Covers chopping audio tracks, using 'tab to transient' for precise cuts, and replacing clips while maintaining original timing for professional sound design workflows.",
