@@ -2,6 +2,13 @@
 window.latestContent = {
     wiki: [
         {
+            title: "Phone Bans in Schools: The Kids Debate",
+            url: "https://www.nytimes.com/2025/09/17/opinion/phone-bans-schools-kids.html?unlocked_article_code=1.oU8.7QA1.Zw5eQr11xIk2&smid=nytcore-ios-share&referringSource=articleShare",
+            description: "Opinion piece examining the implementation of smartphone bans in schools and their impact on students. Explores the debate around distraction-free learning environments, emergency communication concerns, and the balance between educational focus and modern technology integration.",
+            category: "Education & Technology",
+            dateAdded: "2025-09-25"
+        },
+        {
             title: "Sorry Rick Rubin, Vibe Coding Isn't Punk Rock",
             url: "https://open.substack.com/pub/fabriziocheloni607361/p/sorry-rick-rubin-vibe-coding-isnt?r=2bfcii&utm_campaign=post&utm_medium=web&showWelcomeOnShare=false",
             description: "Critiques the 'vibe coding' approach that relies heavily on AI tools, arguing that traditional programming is a creative, meditative process that involves deep problem-solving and modeling the world.",
