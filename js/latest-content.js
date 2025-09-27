@@ -2,6 +2,13 @@
 window.latestContent = {
     wiki: [
         {
+            title: "Why we need C++ Exceptions",
+            url: "https://abuehl.github.io/2025/09/08/why-exceptions.html",
+            description: "The author argues that C++ exceptions were crucial in developing a complex UML Editor, enabling sophisticated error handling and transaction management. Exceptions allowed the team to manage intricate scenarios like nested object interactions and XML parsing, providing a more elegant solution than traditional error return values.",
+            category: "Security & Safety",
+            dateAdded: "2025-09-27"
+        },
+        {
             title: "Phone Bans in Schools: The Kids Debate",
             url: "https://www.nytimes.com/2025/09/17/opinion/phone-bans-schools-kids.html?unlocked_article_code=1.oU8.7QA1.Zw5eQr11xIk2&smid=nytcore-ios-share&referringSource=articleShare",
             description: "Opinion piece examining the implementation of smartphone bans in schools and their impact on students. Explores the debate around distraction-free learning environments, emergency communication concerns, and the balance between educational focus and modern technology integration.",
