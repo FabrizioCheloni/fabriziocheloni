@@ -2,6 +2,13 @@
 window.latestContent = {
     wiki: [
         {
+            title: "Essential Soft Skills for Developers in the AI Age",
+            url: "https://www.stickyminds.com/article/essential-soft-skills-developers-ai-age",
+            description: "Explores critical soft skills that developers need to thrive in the AI era, including communication, collaboration, critical thinking, and adaptability. Emphasizes that while AI tools handle technical tasks, human skills like empathy, ethical reasoning, and continuous learning are becoming increasingly vital for professional success.",
+            category: "Development Tools & Practices",
+            dateAdded: "2025-11-07"
+        },
+        {
             title: "Why we need C++ Exceptions",
             url: "https://abuehl.github.io/2025/09/08/why-exceptions.html",
             description: "The author argues that C++ exceptions were crucial in developing a complex UML Editor, enabling sophisticated error handling and transaction management. Exceptions allowed the team to manage intricate scenarios like nested object interactions and XML parsing, providing a more elegant solution than traditional error return values.",
