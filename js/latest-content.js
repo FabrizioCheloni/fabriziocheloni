@@ -2,6 +2,27 @@
 window.latestContent = {
     wiki: [
         {
+            title: "The Most Confusing C++ Behavior",
+            url: "https://codestyleandtaste.com/most-confusing-C++-behavior.html",
+            description: "Explores the counterintuitive behavior of trivial constructors in C++, which don't initialize member variables despite being called constructors. Demonstrates how D() (trivial, uninitialized) differs from D(){} (non-trivial, zero-initialized), discusses std::is_trivially_constructible and memcpy safety, and argues for consistent variable initialization rules across codebases.",
+            category: "C++ Programming",
+            dateAdded: "2026-05-18"
+        },
+        {
+            title: "Don't Use AI for Audio Programming",
+            url: "https://thewolfsound.com/dont-use-ai-for-audio-programming/?utm_source=linkedin&utm_medium=social",
+            description: "Jan Wilczek argues that beginners should avoid AI-generated audio code because LLMs lack understanding of real-time safety constraints (like avoiding memory allocation on audio threads) and DSP fundamentals. Relying on AI also undermines the cognitive effort needed to develop expertise, produces hard-to-maintain 'vibe-coded' plugins, and may actually slow experienced developers despite subjective speed perceptions.",
+            category: "Audio Programming & DSP",
+            dateAdded: "2026-05-18"
+        },
+        {
+            title: "I programmatori che cambiano indirizzo (Programmers Changing Direction)",
+            url: "https://open.substack.com/pub/pensieriaf/p/i-programmatori-che-cambiano-indirizzo?r=2bfcii&utm_campaign=post-expanded-share&utm_medium=web",
+            description: "Alfonso Fuggetta challenges the narrative that AI is destroying tech jobs, noting that only ~55,000 of 1.2 million 2025 layoffs actually cited AI as the cause. Instead, the piece argues that programmers are migrating from tech companies into traditionally non-tech sectors (retail, real estate, construction) that are finally building digital capabilities, making the workforce shift more complex than apocalyptic narratives suggest.",
+            category: "Development Tools & Practices",
+            dateAdded: "2026-05-18"
+        },
+        {
             title: "Essential Soft Skills for Developers in the AI Age",
             url: "https://www.stickyminds.com/article/essential-soft-skills-developers-ai-age",
             description: "Explores critical soft skills that developers need to thrive in the AI era, including communication, collaboration, critical thinking, and adaptability. Emphasizes that while AI tools handle technical tasks, human skills like empathy, ethical reasoning, and continuous learning are becoming increasingly vital for professional success.",
